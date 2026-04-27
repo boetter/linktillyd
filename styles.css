@@ -1,0 +1,108 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f8fc;
+  color: #111827;
+}
+
+.app {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(17, 24, 39, 0.08);
+}
+
+h1 {
+  margin-bottom: 0.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  font: inherit;
+  border-radius: 10px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #cfd7e6;
+  padding: 0.65rem 0.75rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: 0;
+  background: #1d4ed8;
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.actions {
+  margin-top: 0.9rem;
+}
+
+#status {
+  min-height: 1.2rem;
+  color: #1f2937;
+}
+
+@media (min-width: 720px) {
+  .row {
+    flex-direction: row;
+    align-items: end;
+  }
+
+  .row > *:first-child {
+    flex: 1;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

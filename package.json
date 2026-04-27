@@ -1,0 +1,14 @@
+{
+  "name": "linktillyd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "netlify dev",
+    "check": "node --check netlify/functions/extract-text.mjs && node --check netlify/functions/synthesize.mjs"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "jsdom": "^26.1.0"
+  }
+}
