@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkTilLyd</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>LinkTilLyd</h1>
+      <p class="intro">Indsæt et link eller en tekst, vælg TTS-model, og afspil lyd på mobil eller desktop.</p>
+
+      <section class="card">
+        <label for="urlInput">Artikel-link (valgfrit)</label>
+        <div class="row">
+          <input id="urlInput" type="url" placeholder="https://..." />
+          <button id="extractBtn" type="button">Hent tekst</button>
+        </div>
+
+        <label for="textInput">Tekst til oplæsning</label>
+        <textarea id="textInput" rows="12" placeholder="Indsæt artikeltekst her..."></textarea>
+
+        <div class="grid">
+          <div>
+            <label for="provider">TTS-udbyder</label>
+            <select id="provider">
+              <option value="google">Google Gemini Flash TTS</option>
+              <option value="elevenlabs">ElevenLabs v3</option>
+            </select>
+          </div>
+          <div>
+            <label for="model">Model-id</label>
+            <input id="model" value="gemini-2.5-flash-preview-tts" />
+          </div>
+        </div>
+
+        <div class="grid" id="voiceSettings">
+          <div>
+            <label for="googleVoice">Google voiceName</label>
+            <input id="googleVoice" value="Kore" />
+          </div>
+          <div>
+            <label for="elevenVoiceId">ElevenLabs voice_id</label>
+            <input id="elevenVoiceId" value="JBFqnCBsd6RMkjVDRZzb" />
+          </div>
+        </div>
+
+        <button id="synthesizeBtn" class="primary" type="button">Lav lyd</button>
+        <p id="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <audio id="player" controls></audio>
+        <a id="download" download="linktillyd.mp3">Download lyd</a>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
