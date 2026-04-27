@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link til Lyd</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Link til Lyd</h1>
+        <p>Indsæt et link eller en tekst, vælg TTS-model, og få lyd tilbage.</p>
+      </header>
+
+      <section class="card">
+        <label for="urlInput">Artikel-link (valgfrit)</label>
+        <div class="inline-row">
+          <input id="urlInput" type="url" placeholder="https://eksempel.dk/artikel" />
+          <button id="extractBtn" type="button">Hent tekst fra link</button>
+        </div>
+        <small>Hvis linket ikke kan læses, kan du altid indsætte tekst manuelt.</small>
+      </section>
+
+      <section class="card">
+        <label for="textInput">Tekst</label>
+        <textarea id="textInput" rows="12" placeholder="Indsæt artiklens tekst her..."></textarea>
+      </section>
+
+      <section class="card">
+        <fieldset>
+          <legend>TTS-model</legend>
+          <label class="radio-row">
+            <input type="radio" name="provider" value="google" checked />
+            Google Gemini 3.1 Flash TTS
+          </label>
+          <label class="radio-row">
+            <input type="radio" name="provider" value="elevenlabs" />
+            ElevenLabs V3
+          </label>
+        </fieldset>
+
+        <button id="ttsBtn" class="primary" type="button">Lav lyd</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h2>Afspiller</h2>
+        <audio id="audioPlayer" controls></audio>
+        <a id="downloadLink" download="tekst-til-lyd" hidden>Download lydfil</a>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

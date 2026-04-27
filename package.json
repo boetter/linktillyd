@@ -1,0 +1,14 @@
+{
+  "name": "linktillyd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo 'Static app - no build step required'",
+    "check": "node --check netlify/functions/extract-text.mjs && node --check netlify/functions/tts.mjs"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "jsdom": "^24.1.3"
+  }
+}
